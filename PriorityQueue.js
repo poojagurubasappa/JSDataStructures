@@ -25,7 +25,8 @@ function PriorityQueue() {
   }
 
   this.dequeue = function() {
-    collection.shift();
+    var value = collection.shift();
+    return value[0];
   }
 
   this.show = function() {

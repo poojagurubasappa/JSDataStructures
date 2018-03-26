@@ -8,7 +8,8 @@ function Queue() {
 
   //implementing dequeue : should remove the first element of array
   this.dequeue = function() {
-    collection.shift();
+    var value = collection.shift();
+    return value;
   }
 
   //implementing isEmpty : should return true if queue is empty
