@@ -153,6 +153,27 @@ class BST {
       return result;
     }
   }
+
+  levelOrder() {
+    let arr = [];
+    let myQueue = [];
+    if(this.root !== null) {
+      myQueue.push(this.root);
+      while(myQueue.length > 0) {
+        let node = myQueue.shift();
+        arr.push(node.data);
+        if(node.left) {
+          myQueue.push(node.left);
+        }
+        if(node.right) {
+          myQueue.push(node.right);
+        }
+      }
+      return arr;
+    } else {
+      return null;
+    }
+  }
 }
 
 var myBST = new BST();
@@ -169,3 +190,4 @@ console.log(myBST.isBalancedTree());
 console.log(myBST.inOrder());
 console.log(myBST.preOrder());
 console.log(myBST.postOrder());
+console.log(myBST.levelOrder());
